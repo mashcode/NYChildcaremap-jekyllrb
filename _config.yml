@@ -6,7 +6,7 @@
 name: NYC Day Care
 description: 
 author:
-  name: 'Anita Schmid' 'Mashcode'
+  name: 
   email: marc@marcshifflett.com
 
 # Grunt handles images and assets.
@@ -26,7 +26,7 @@ markdown: redcarpet
 
 pygments: true
 
-# baseurl: /NYCdaycare
+baseurl: /jekyllrb
 
 title_tag_text: Daycare Map NYC
 h1_tag_text: Daycare Map NYC
