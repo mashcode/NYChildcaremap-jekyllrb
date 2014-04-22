@@ -28,7 +28,7 @@ markdown: redcarpet
 
 pygments: true
 
-# baseurl: /jekyllrb/app/
+# baseurl: /
 
 title_tag_text: Daycare Map NYC
 h1_tag_text: Daycare Map NYC
