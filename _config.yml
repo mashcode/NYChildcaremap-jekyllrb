@@ -10,8 +10,10 @@ author:
   email: marc@marcshifflett.com
 
 # Grunt handles images and assets.
-exclude: ['img', 'css', 'js', 'fonts',
+exclude: ['Procfile', 'README.md', 'CNAME',
           '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico']
+
+# exclude: ['img', 'css', 'js', 'fonts', "Gruntfile.js", "package.json", "node_modules"]
 
 include: ['.htaccess']
 
@@ -26,11 +28,7 @@ markdown: redcarpet
 
 pygments: true
 
-baseurl: /jekyllrb/app/
+# baseurl: /jekyllrb/app/
 
 title_tag_text: Daycare Map NYC
 h1_tag_text: Daycare Map NYC
-
-exclude: ["Procfile", "README.md", "CNAME"]
-
-# exclude: ["Gruntfile.js", "package.json", "node_modules"]
