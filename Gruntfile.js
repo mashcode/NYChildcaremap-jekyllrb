@@ -432,7 +432,7 @@ module.exports = function (grunt) {
     'filerev',
     'usemin',
     'cdn',
-    'htmlmin'  
+    'htmlmin'
     ]);
 
   grunt.registerTask('deploy', [
