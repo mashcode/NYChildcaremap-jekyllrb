@@ -15,6 +15,8 @@ module.exports = function (grunt) {
   // Load all Grunt tasks
   require('load-grunt-tasks')(grunt);
 
+  //grunt.loadNpmTasks('grunt-cdn');
+
   grunt.initConfig({
     // Configurable paths
     yeoman: {
@@ -117,7 +119,7 @@ module.exports = function (grunt) {
         // require: ['singularity', 'jacket'],
         bundleExec: true,
         sassDir: '<%= yeoman.app %>/_scss',
-        cssDir: '<%= yeoman.app %>/css',
+        cssDir: '.tmp/css',
         imagesDir: '<%= yeoman.app %>/img',
         javascriptsDir: '<%= yeoman.app %>/js',
         relativeAssets: false,
@@ -202,7 +204,7 @@ module.exports = function (grunt) {
         }
       }
     },
-    useminPrepare: {
+    UseminPrepare: {
       options: {
         dest: '<%= yeoman.dist %>'
       },
@@ -214,6 +216,15 @@ module.exports = function (grunt) {
       },
       html: ['<%= yeoman.dist %>/**/*.html'],
       css: ['<%= yeoman.dist %>/css/**/*.css']
+    },
+    // appends path to fix broken jekyll baseurl variable https://github.com/tactivos/grunt-cdn
+    cdn: {
+      options: {
+        cdn: '/jekyllrb/', flatten: true,
+      },
+      dist: {
+        src: ['<%= yeoman.dist %>/*.html', '<%= yeoman.dist %>/**/*.css']
+      }
     },
     htmlmin: {
       dist: {
@@ -368,7 +379,7 @@ module.exports = function (grunt) {
       ]
     }
   });
-
+  
   // Define Tasks
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
@@ -420,7 +431,8 @@ module.exports = function (grunt) {
     'svgmin',
     'filerev',
     'usemin',
-    'htmlmin'
+    'cdn',
+    'htmlmin'  
     ]);
 
   grunt.registerTask('deploy', [
