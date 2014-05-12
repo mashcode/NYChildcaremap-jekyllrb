@@ -220,7 +220,7 @@ module.exports = function (grunt) {
     // appends path to fix broken jekyll baseurl variable https://github.com/tactivos/grunt-cdn
     cdn: {
       options: {
-        cdn: '/jekyllrb/', flatten: true,
+        cdn: '/jekyllrb/', flatten: true
       },
       dist: {
         src: ['<%= yeoman.dist %>/*.html', '<%= yeoman.dist %>/**/*.css']
